@@ -172,12 +172,12 @@ INSERT INTO FoE_SxBuildings (
 , 'Iron Age' -- SxAge
 , 'Butchery' -- SxTech
 , 66 -- SxPopRequired
-, -1 -- SxSupplyYieldFiveMinutes_AA
-, -1 -- SxSupplyYieldFifteenMinutes_BB
+, 30 -- SxSupplyYieldFiveMinutes_AA
+, 70 -- SxSupplyYieldFifteenMinutes_BB
 , 160 -- SxSupplyYieldOneHour_CC
-, -1 -- SxSupplyYieldFourHours_DD
-, -1 -- SxSupplyYieldEightHours_EE
-, -1 -- SxSupplyYieldOneDay_FF
+, 260 -- SxSupplyYieldFourHours_DD
+, 400 -- SxSupplyYieldEightHours_EE
+, 790 -- SxSupplyYieldOneDay_FF
 , -1 -- SxSupplyYieldTwoDays_GG
 , 4 -- SxSWPixels
 , 3 -- SxNWPixels
@@ -188,5 +188,5 @@ INSERT INTO FoE_SxBuildings (
 , 405 -- SxBuildSupplies
 , -1 -- SxSellCoins
 , -1 -- SxSellSupplies
-, -10010 -- dbStatusID
+, 0 -- dbStatusID
 );
