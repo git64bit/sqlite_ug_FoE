@@ -133,3 +133,112 @@ INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('dbMessagePriori
 INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('dbMessageTitle','A brief description only', 0);
 INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('dbMessageText','Full message details. External links and references may be included - but note that those are not quaranteed to stay accurate or available, so duplicate the info here as much as possible.', 0);
 -- END of documenting the database
+--
+-- Creating the Coins Buildings table
+CREATE TABLE FoE_CxBuildings ( 
+  aaPK INTEGER PRIMARY KEY AUTOINCREMENT
+, CxID INTEGER (8) NOT NULL
+, CxName VARCHAR (64) NOT NULL
+, CxAge VARCHAR (32) NOT NULL
+, CxTech VARCHAR (32) NOT NULL
+, CxPopCount INTEGER (4) NOT NULL
+, CxCoinYield INTEGER (4) NOT NULL
+, CxYieldCycle INTEGER (4) NOT NULL
+, CxSWPixels INTEGER (2) NOT NULL
+, CxNWPixels INTEGER (2) NOT NULL
+, CxRoadWidth INTEGER (2) NOT NULL
+, CxBuildTime INTEGER (4) NOT NULL
+, CxBuildDiamonds INTEGER (4) NOT NULL
+, CxBuildCoins INTEGER (4) NOT NULL
+, CxBuildSupplies INTEGER (4) NOT NULL
+, CxSellCoins INTEGER (4) DEFAULT 0
+, CxSellSupplies INTEGER (4) DEFAULT 0
+, CxCF_PopPerSQR REAL (4, 2) DEFAULT 0.00
+, CxCF_CoinsPerSQR REAL (4, 2) DEFAULT 0.00
+, CxCF_SecondsPerCoinPerPop REAL (4, 2) DEFAULT 0.00
+, CxCF_SecondsPerCoinPerSQR REAL (4, 2) DEFAULT 0.00
+, dbStatusID INTEGER (4) 
+, aaTimeStamp DEFAULT CURRENT_TIMESTAMP);
+INSERT INTO FoE_aaAuditor (
+  aaToken
+, aaTable
+, aaROWID
+, aaSQLText
+, aaUUID
+, dbStatusID) 
+VALUES(
+  'CREATE'
+, 'FoE_CxBuildings'
+, 0
+, ''
+, '96d6b400-e237-11e5-bef5-0002a5d5c51b'
+, 0);
+-- END of creating the Coins Buildings table
+--
+-- Creating the AFTER INSERT Trigger
+CREATE TRIGGER "tgINSERT-AFTER_FoE_CxBuildings" AFTER INSERT ON FoE_CxBuildings FOR EACH ROW BEGIN 
+-- Task One Update Audit
+INSERT INTO FoE_aaAuditor (aaToken, aaTable, aaROWID, aaUUID, dbStatusID)
+VALUES ('INSERT', 'FoE_CxBuildings', last_insert_rowid(), '96d6b400-e237-11e5-bef5-0002a5d5c51b', 0);
+-- Task Two Calculate Fields
+UPDATE FoE_CxBuildings SET 
+  CxCF_PopPerSQR = ((CxPopCount*1.0) / ((CxSWPixels*1.0)*(CxNWPixels*1.0)))
+, CxCF_CoinsPerSQR = ((CxCoinYield*1.0) / ((CxSWPixels*1.0)*(CxNWPixels*1.0)))
+, CxCF_SecondsPerCoinPerPop = ((CxYieldCycle*1.0) / ((CxPopCount*1.0) / (CxCoinYield*1.0)))
+, CxCF_SecondsPerCoinPerSQR = (((CxYieldCycle*1.0) / (CxCoinYield*1.0)) / ((CxSWPixels*1.0)*(CxNWPixels*1.0)))
+WHERE aaPK = NEW.aaPK; END;
+-- END of creating the AFTER INSERT trigger
+--
+-- Creating the AFTER UPDATE Trigger
+CREATE TRIGGER "tgUPDATE-AFTER_FoE_CxBuildings" AFTER UPDATE ON FoE_CxBuildings FOR EACH ROW BEGIN INSERT INTO FoE_aaAuditor (aaToken, aaTable, aaROWID, aaSQLText, aaUUID, dbStatusID)
+VALUES ('UPDATE', 'FoE_CxBuildings', OLD.aaPK,
+'PREW-CxID: ' || OLD.CxID ||
+'~PREW-CxName: ' || OLD.CxName ||
+'~PREW-CxAge: ' || OLD.CxAge ||
+'~PREW-CxTech: ' || OLD.CxTech ||
+'~PREW-CxPopCount: ' || OLD.CxPopCount ||
+'~PREW-CxCoinYield: ' || OLD.CxCoinYield ||
+'~PREW-CxYieldCycle: ' || OLD.CxYieldCycle ||
+'~PREW-CxSWPixels: ' || OLD.CxSWPixels ||
+'~PREW-CxNWPixels: ' || OLD.CxNWPixels ||
+'~PREW-CxRoadWidth: ' || OLD.CxRoadWidth ||
+'~PREW-CxBuildTime: ' || OLD.CxBuildTime ||
+'~PREW-CxBuildDiamonds: ' || OLD.CxBuildDiamonds ||
+'~PREW-CxBuildCoins: ' || OLD.CxBuildCoins ||
+'~PREW-CxBuildSupplies: ' || OLD.CxBuildSupplies ||
+'~PREW-CxSellCoins: ' || OLD.CxSellCoins ||
+'~PREW-CxSellSupplies: ' || OLD.CxSellSupplies ||
+'~PREW-CxCF_PopPerSQR: ' || OLD.CxCF_PopPerSQR ||
+'~PREW-CxCF_CoinsPerSQR: ' || OLD.CxCF_CoinsPerSQR ||
+'~PREW-CxCF_SecondsPerCoinPerPop: ' || OLD.CxCF_SecondsPerCoinPerPop ||
+'~PREW-CxCF_SecondsPerCoinPerSQR: ' || OLD.CxCF_SecondsPerCoinPerSQR ||
+'~PREW-dbStatusID: ' || OLD.dbStatusID ||
+'~PREW-aaTimeStamp: ' || OLD.aaTimeStamp, 
+'96d6b400-e237-11e5-bef5-0002a5d5c51b', 0); END;
+-- END of creating the AFTER UPDATE trigger
+--
+-- Documenting the database 
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('tgINSERT-AFTER_FoE_CxBuildings','Trigger in the FoE_CxBuildings table, records new record insertions', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('tgUPDATE-AFTER_FoE_CxBuildings','Trigger in the FoE_CxBuildings table, records updates', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('FoE_CxBuildings','Data table, holding game information about houses', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxID','Manually generated. The table has auto primary key, so if this is not needed then ignore', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxName','The name of the house as it appears in the game interface', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxAge','The age where the house first becomes available', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxTech','The name of the Technology which unlocks it', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxPopCount','Population count, assumes not up-gradable houses', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxCoinYield','The amount of coins this house generates', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxYieldCycle','The time in seconds it takes to generate the coins', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxSWPixels','Size alongside the SW-NE edge', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxNWPixels','Size alongside the NW-SE edge', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxRoadWidth','The width of road required in pixels - 0 when none required', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxBuildTime','The number of seconds it takes to build', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxBuildDiamonds','The building cost in Diamonds', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxBuildCoins','The coin part of the building cost', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxBuildSupplies','The supply part of the building cost', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxSellCoins','Coins recovered by selling this house, set to -1 when not yet recorded', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxSellSupplies','Supplies recovered by selling this house, set to -1 when not yet recorded', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxCF_PopPerSQR','Calculated Field (CF) as CxCF_PopPerSQR = (CxPopCount / (CxSWPixels*CxNWPixels))', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxCF_CoinsPerSQR','Calculated Field (CF) as CxCF_CoinsPerSQR = (CxCoinYield / (CxSWPixels*CxNWPixels))', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxCF_SecondsPerCoinPerPop','Calculated Field (CF) as CxCF_SecondsPerCoinPerPop = (CxYieldCycle /(CxPopCount / CxCoinYield))', 0);
+INSERT INTO FoE_ddSelfDoc (ddToken, ddText, dbStatusID) VALUES ('CxCF_SecondsPerCoinPerSQR','Calculated Field (CF) as CxCF_SecondsPerCoinPerSQR = ((CxYieldCycle / CxCoinYield) / (CxSWPixels*CxNWPixels)) ', 0);
+-- END of documenting the database
