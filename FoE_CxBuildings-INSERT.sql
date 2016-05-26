@@ -567,3 +567,155 @@ INSERT INTO FoE_CxBuildings (
 , -1 -- CxSellSupplies
 , 0 -- dbStatusID
 );
+-- Add house - Victorian House
+INSERT INTO FoE_CxBuildings (
+  CxID
+, CxName
+, CxAge
+, CxTech
+, CxPopCount
+, CxCoinYield
+, CxYieldCycle
+, CxSWPixels
+, CxNWPixels
+, CxRoadWidth
+, CxBuildTime
+, CxBuildDiamonds
+, CxBuildCoins
+, CxBuildSupplies
+, CxSellCoins
+, CxSellSupplies
+, dbStatusID
+) VALUES (
+  50225 -- CxID
+, 'Victorian House' -- CxName
+, 'Industrial Age' -- CxAge
+, 'Victorian Houses' -- CxTech
+, 474 -- CxPopCount
+, 2420 -- CxCoinYield
+, 86400 -- CxYieldCycle
+, 3 -- CxSWPixels
+, 2 -- CxNWPixels
+, 1 -- CxRoadWidth
+, 32400 -- CxBuildTime
+, 0 -- CxBuildDiamonds
+, 17028 -- CxBuildCoins
+, 65142 -- CxBuildSupplies
+, -1 -- CxSellCoins
+, -1 -- CxSellSupplies
+, 0 -- dbStatusID
+);
+-- Add house - Tenement House
+INSERT INTO FoE_CxBuildings (
+  CxID
+, CxName
+, CxAge
+, CxTech
+, CxPopCount
+, CxCoinYield
+, CxYieldCycle
+, CxSWPixels
+, CxNWPixels
+, CxRoadWidth
+, CxBuildTime
+, CxBuildDiamonds
+, CxBuildCoins
+, CxBuildSupplies
+, CxSellCoins
+, CxSellSupplies
+, dbStatusID
+) VALUES (
+  50230 -- CxID
+, 'Tenement House' -- CxName
+, 'Progressive Era' -- CxAge
+, 'Tenement Houses' -- CxTech
+, 510 -- CxPopCount
+, 610 -- CxCoinYield
+, 3600 -- CxYieldCycle
+, 3 -- CxSWPixels
+, 3 -- CxNWPixels
+, 1 -- CxRoadWidth
+, 24600 -- CxBuildTime
+, 0 -- CxBuildDiamonds
+, 21681 -- CxBuildCoins
+, 83556 -- CxBuildSupplies
+, -1 -- CxSellCoins
+, -1 -- CxSellSupplies
+, 0 -- dbStatusID
+);
+-- Add house - Council House
+INSERT INTO FoE_CxBuildings (
+  CxID
+, CxName
+, CxAge
+, CxTech
+, CxPopCount
+, CxCoinYield
+, CxYieldCycle
+, CxSWPixels
+, CxNWPixels
+, CxRoadWidth
+, CxBuildTime
+, CxBuildDiamonds
+, CxBuildCoins
+, CxBuildSupplies
+, CxSellCoins
+, CxSellSupplies
+, dbStatusID
+) VALUES (
+  50235 -- CxID
+, 'Council House' -- CxName
+, 'Progressive Era' -- CxAge
+, 'Council Houses' -- CxTech
+, 680 -- CxPopCount
+, 1280 -- CxCoinYield
+, 14400 -- CxYieldCycle
+, 3 -- CxSWPixels
+, 3 -- CxNWPixels
+, 1 -- CxRoadWidth
+, 28800 -- CxBuildTime
+, 0 -- CxBuildDiamonds
+, 27126 -- CxBuildCoins
+, 104400 -- CxBuildSupplies
+, -1 -- CxSellCoins
+, -1 -- CxSellSupplies
+, 0 -- dbStatusID
+);
+-- Add house - High-Rise
+INSERT INTO FoE_CxBuildings (
+  CxID
+, CxName
+, CxAge
+, CxTech
+, CxPopCount
+, CxCoinYield
+, CxYieldCycle
+, CxSWPixels
+, CxNWPixels
+, CxRoadWidth
+, CxBuildTime
+, CxBuildDiamonds
+, CxBuildCoins
+, CxBuildSupplies
+, CxSellCoins
+, CxSellSupplies
+, dbStatusID
+) VALUES (
+  50240 -- CxID
+, 'High-Rise' -- CxName
+, 'Progressive Era' -- CxAge
+, 'High-Rises' -- CxTech
+, 1087 -- CxPopCount
+, 5750 -- CxCoinYield
+, 86400 -- CxYieldCycle
+, 3 -- CxSWPixels
+, 3 -- CxNWPixels
+, 1 -- CxRoadWidth
+, 34200 -- CxBuildTime
+, 0 -- CxBuildDiamonds
+, 33858 -- CxBuildCoins
+, 130400 -- CxBuildSupplies
+, -1 -- CxSellCoins
+, -1 -- CxSellSupplies
+, 0 -- dbStatusID
+);
