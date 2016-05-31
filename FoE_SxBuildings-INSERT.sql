@@ -190,3 +190,243 @@ INSERT INTO FoE_SxBuildings (
 , -1 -- SxSellSupplies
 , 0 -- dbStatusID
 );
+-- Add building - Goat Farm
+INSERT INTO FoE_SxBuildings (
+  SxID
+, SxName
+, SxAge
+, SxTech
+, SxPopRequired
+, SxSupplyYieldFiveMinutes_AA
+, SxSupplyYieldFifteenMinutes_BB
+, SxSupplyYieldOneHour_CC
+, SxSupplyYieldFourHours_DD
+, SxSupplyYieldEightHours_EE
+, SxSupplyYieldOneDay_FF
+, SxSupplyYieldTwoDays_GG
+, SxSWPixels
+, SxNWPixels
+, SxRoadWidth
+, SxBuildTime
+, SxBuildDiamonds
+, SxBuildCoins
+, SxBuildSupplies
+, SxSellCoins
+, SxSellSupplies
+, dbStatusID
+) VALUES (
+  150170 -- SxID
+, 'Goat Farm' -- SxName
+, 'Iron Age' -- SxAge
+, 'Stock Breeding' -- SxTech
+, 122 -- SxPopRequired
+, 40 -- SxSupplyYieldFiveMinutes_AA
+, 90 -- SxSupplyYieldFifteenMinutes_BB
+, 220 -- SxSupplyYieldOneHour_CC
+, 360 -- SxSupplyYieldFourHours_DD
+, 540 -- SxSupplyYieldEightHours_EE
+, 1080 -- SxSupplyYieldOneDay_FF
+, -1 -- SxSupplyYieldTwoDays_GG
+, 4 -- SxSWPixels
+, 5 -- SxNWPixels
+, 1 -- SxRoadWidth
+, 6000 -- SxBuildTime
+, 0 -- SxBuildDiamonds
+, 4752 -- SxBuildCoins
+, 673 -- SxBuildSupplies
+, -1 -- SxSellCoins
+, -1 -- SxSellSupplies
+, 0 -- dbStatusID
+);
+-- Add building - Tailor
+INSERT INTO FoE_SxBuildings (
+  SxID
+, SxName
+, SxAge
+, SxTech
+, SxPopRequired
+, SxSupplyYieldFiveMinutes_AA
+, SxSupplyYieldFifteenMinutes_BB
+, SxSupplyYieldOneHour_CC
+, SxSupplyYieldFourHours_DD
+, SxSupplyYieldEightHours_EE
+, SxSupplyYieldOneDay_FF
+, SxSupplyYieldTwoDays_GG
+, SxSWPixels
+, SxNWPixels
+, SxRoadWidth
+, SxBuildTime
+, SxBuildDiamonds
+, SxBuildCoins
+, SxBuildSupplies
+, SxSellCoins
+, SxSellSupplies
+, dbStatusID
+) VALUES (
+  150175 -- SxID
+, 'Tailor' -- SxName
+, 'Iron Age' -- SxAge
+, 'Iron Age' -- SxTech
+, 88 -- SxPopRequired
+, 70 -- SxSupplyYieldFiveMinutes_AA
+, 180 -- SxSupplyYieldFifteenMinutes_BB
+, 360 -- SxSupplyYieldOneHour_CC
+, 600 -- SxSupplyYieldFourHours_DD
+, 900 -- SxSupplyYieldEightHours_EE
+, 1800 -- SxSupplyYieldOneDay_FF
+, -1 -- SxSupplyYieldTwoDays_GG
+, 3 -- SxSWPixels
+, 4 -- SxNWPixels
+, 1 -- SxRoadWidth
+, 20 -- SxBuildTime
+, 400 -- SxBuildDiamonds
+, 0 -- SxBuildCoins
+, 0 -- SxBuildSupplies
+, -1 -- SxSellCoins
+, -1 -- SxSellSupplies
+, 0 -- dbStatusID
+);
+-- Add building - Bakery
+INSERT INTO FoE_SxBuildings (
+  SxID
+, SxName
+, SxAge
+, SxTech
+, SxPopRequired
+, SxSupplyYieldFiveMinutes_AA
+, SxSupplyYieldFifteenMinutes_BB
+, SxSupplyYieldOneHour_CC
+, SxSupplyYieldFourHours_DD
+, SxSupplyYieldEightHours_EE
+, SxSupplyYieldOneDay_FF
+, SxSupplyYieldTwoDays_GG
+, SxSWPixels
+, SxNWPixels
+, SxRoadWidth
+, SxBuildTime
+, SxBuildDiamonds
+, SxBuildCoins
+, SxBuildSupplies
+, SxSellCoins
+, SxSellSupplies
+, dbStatusID
+) VALUES (
+  150180 -- SxID
+, 'Bakery' -- SxName
+, 'Early Middle Ages' -- SxAge
+, 'Early Middle Ages' -- SxTech
+, 103 -- SxPopRequired
+, 80 -- SxSupplyYieldFiveMinutes_AA
+, 200 -- SxSupplyYieldFifteenMinutes_BB
+, 480 -- SxSupplyYieldOneHour_CC
+, 800 -- SxSupplyYieldFourHours_DD
+, 1200 -- SxSupplyYieldEightHours_EE
+, 2400 -- SxSupplyYieldOneDay_FF
+, -1 -- SxSupplyYieldTwoDays_GG
+, 4 -- SxSWPixels
+, 3 -- SxNWPixels
+, 1 -- SxRoadWidth
+, 20 -- SxBuildTime
+, 400 -- SxBuildDiamonds
+, 0 -- SxBuildCoins
+, 0 -- SxBuildSupplies
+, -1 -- SxSellCoins
+, -1 -- SxSellSupplies
+, 0 -- dbStatusID
+);
+-- Add building - Tannery
+INSERT INTO FoE_SxBuildings (
+  SxID
+, SxName
+, SxAge
+, SxTech
+, SxPopRequired
+, SxSupplyYieldFiveMinutes_AA
+, SxSupplyYieldFifteenMinutes_BB
+, SxSupplyYieldOneHour_CC
+, SxSupplyYieldFourHours_DD
+, SxSupplyYieldEightHours_EE
+, SxSupplyYieldOneDay_FF
+, SxSupplyYieldTwoDays_GG
+, SxSWPixels
+, SxNWPixels
+, SxRoadWidth
+, SxBuildTime
+, SxBuildDiamonds
+, SxBuildCoins
+, SxBuildSupplies
+, SxSellCoins
+, SxSellSupplies
+, dbStatusID
+) VALUES (
+  150185 -- SxID
+, 'Tannery' -- SxName
+, 'Early Middle Ages' -- SxAge
+, 'Tanning' -- SxTech
+, 54 -- SxPopRequired
+, 30 -- SxSupplyYieldFiveMinutes_AA
+, 70 -- SxSupplyYieldFifteenMinutes_BB
+, 160 -- SxSupplyYieldOneHour_CC
+, 270 -- SxSupplyYieldFourHours_DD
+, 410 -- SxSupplyYieldEightHours_EE
+, 810 -- SxSupplyYieldOneDay_FF
+, -1 -- SxSupplyYieldTwoDays_GG
+, 3 -- SxSWPixels
+, 3 -- SxNWPixels
+, 1 -- SxRoadWidth
+, 10800 -- SxBuildTime
+, 0 -- SxBuildDiamonds
+, 7722 -- SxBuildCoins
+, 1782 -- SxBuildSupplies
+, -1 -- SxSellCoins
+, -1 -- SxSellSupplies
+, 0 -- dbStatusID
+);
+-- Add building - Shoemaker
+INSERT INTO FoE_SxBuildings (
+  SxID
+, SxName
+, SxAge
+, SxTech
+, SxPopRequired
+, SxSupplyYieldFiveMinutes_AA
+, SxSupplyYieldFifteenMinutes_BB
+, SxSupplyYieldOneHour_CC
+, SxSupplyYieldFourHours_DD
+, SxSupplyYieldEightHours_EE
+, SxSupplyYieldOneDay_FF
+, SxSupplyYieldTwoDays_GG
+, SxSWPixels
+, SxNWPixels
+, SxRoadWidth
+, SxBuildTime
+, SxBuildDiamonds
+, SxBuildCoins
+, SxBuildSupplies
+, SxSellCoins
+, SxSellSupplies
+, dbStatusID
+) VALUES (
+  150190 -- SxID
+, 'Shoemaker' -- SxName
+, 'Early Middle Ages' -- SxAge
+, 'Leather Working' -- SxTech
+, 77 -- SxPopRequired
+, 40 -- SxSupplyYieldFiveMinutes_AA
+, 90 -- SxSupplyYieldFifteenMinutes_BB
+, 210 -- SxSupplyYieldOneHour_CC
+, 350 -- SxSupplyYieldFourHours_DD
+, 530 -- SxSupplyYieldEightHours_EE
+, 1050 -- SxSupplyYieldOneDay_FF
+, -1 -- SxSupplyYieldTwoDays_GG
+, 3 -- SxSWPixels
+, 3 -- SxNWPixels
+, 1 -- SxRoadWidth
+, 9600 -- SxBuildTime
+, 0 -- SxBuildDiamonds
+, 11979 -- SxBuildCoins
+, 1485 -- SxBuildSupplies
+, -1 -- SxSellCoins
+, -1 -- SxSellSupplies
+, 0 -- dbStatusID
+);
